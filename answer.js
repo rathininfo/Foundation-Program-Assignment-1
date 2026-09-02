@@ -18,23 +18,45 @@
 
 
 // Question No 2
-function getDayType(day){
- switch (day) {
-    case "Friday": 
-     case "Saturday":
-     return "Weekend Day"
-        case "Sunday":
-            case "Monday":
-                case "Tuesday":
-                    case "Wednesday":
-                        case "Thursday" :    
-                        return  "Working Day"
-    default:
-        return "Invalid Day"
- }
+// function getDayType(day){
+//  switch (day) {
+//     case "Friday": 
+//      case "Saturday":
+//      return "Weekend Day"
+//         case "Sunday":
+//             case "Monday":
+//                 case "Tuesday":
+//                     case "Wednesday":
+//                         case "Thursday" :    
+//                         return  "Working Day"
+//     default:
+//         return "Invalid Day"
+//  }
 
  
+// }
+
+// console.log(getDayType("Monday"))
+
+
+// Question No 3
+
+function validateUsername(username){
+ let usersLength = username.length
+  if(usersLength < 4){
+    return "Too Short"
+  }
+  if(username.includes(" ")){
+    return "No Space Allowed"
+  }
+   
+  
+  if(username.toLowerCase().includes("admin") ){
+    return "Reserved Word"
+  }
+
+   return "Available"
+
 }
 
-console.log(getDayType("Monday"))
-
+console.log(validateUsername("Admin_Rahim"))
