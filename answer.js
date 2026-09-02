@@ -41,22 +41,56 @@
 
 // Question No 3
 
-function validateUsername(username){
- let usersLength = username.length
-  if(usersLength < 4){
-    return "Too Short"
-  }
-  if(username.includes(" ")){
-    return "No Space Allowed"
-  }
+// function validateUsername(username){
+//  let usersLength = username.length
+//   if(usersLength < 4){
+//     return "Too Short"
+//   }
+//   if(username.includes(" ")){
+//     return "No Space Allowed"
+//   }
    
   
-  if(username.toLowerCase().includes("admin") ){
-    return "Reserved Word"
-  }
+//   if(username.toLowerCase().includes("admin") ){
+//     return "Reserved Word"
+//   }
 
-   return "Available"
+//    return "Available"
+
+// }
+
+// console.log(validateUsername("Admin_Rahim"))
+
+// Question No 4
+
+function getCngFare(distance, isNight, waitingMinutes){
+
+    let fare = 50;
+
+    if(distance > 2){
+        let extraKm =  distance - 2;
+        fare = fare + (extraKm * 15);
+    }
+    
+    if(waitingMinutes ===  undefined){
+        waitingMinutes = 0;
+    }
+
+    let waitingCharge = waitingMinutes * 2 ;
+    fare = fare + waitingCharge;
+
+
+     if(isNight === undefined){
+       isNight = false;
+    }
+
+    if(isNight === true){
+        fare = fare * 1.2;
+    }
+
+   
+
+    return fare;
 
 }
 
-console.log(validateUsername("Admin_Rahim"))
